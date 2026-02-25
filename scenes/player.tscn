@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c5ile72mnpkgw"]
 
 [ext_resource type="Script" uid="uid://cxfva7jufudpu" path="res://scripts/player.gd" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://cfg0orqlhh6wf" path="res://scripts/player_debug_view.gd" id="2_g2els"]
 [ext_resource type="Script" uid="uid://nqd3ghncwj7y" path="res://scripts/mass_gun.gd" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n70b5"]
@@ -21,9 +20,6 @@ shape = SubResource("CapsuleShape3D_n70b5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1285004678]
-
-[node name="PlayerDebugView" type="Node" parent="." unique_id=349582536]
-script = ExtResource("2_g2els")
 
 [node name="MassGun" type="Node3D" parent="." unique_id=1012438904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
