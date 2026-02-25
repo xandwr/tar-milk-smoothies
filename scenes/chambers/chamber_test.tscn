@@ -23,9 +23,15 @@ _surfaces = [{
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_034wr"]
 points = PackedVector3Array(4, 0, 4, 4, -1, 4, -4, 0, 4, -4, -1, 4, 4, 0, -4, 4, -1, -4, -4, 0, -4, -4, -1, -4)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f3qh6"]
+friction = 0.8
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n70b5"]
 radius = 0.2
 height = 1.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3qh6"]
+size = Vector3(0.3, 0.015, 0.3)
 
 [node name="ChamberTest" type="Node3D" unique_id=1474314802]
 
@@ -47,7 +53,8 @@ shape = SubResource("ConvexPolygonShape3D_034wr")
 [node name="Player" type="RigidBody3D" parent="." unique_id=906091339]
 axis_lock_angular_x = true
 axis_lock_angular_z = true
-mass = 70.0
+mass = 65.0
+physics_material_override = SubResource("PhysicsMaterial_f3qh6")
 script = ExtResource("4_f3qh6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=86737461]
@@ -58,3 +65,7 @@ shape = SubResource("CapsuleShape3D_n70b5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=1700307984]
+
+[node name="GroundCast" type="ShapeCast3D" parent="Player" unique_id=1548519128]
+shape = SubResource("BoxShape3D_f3qh6")
+target_position = Vector3(0, 0, 0)

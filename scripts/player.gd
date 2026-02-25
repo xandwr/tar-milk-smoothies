@@ -3,8 +3,10 @@ extends RigidBody3D
 @export var mouse_sensitivity: float = 0.33
 @export var walk_speed: float = 4.0
 @export var sprint_speed: float = 6.5
+@export var jump_force: float = 4.0
 
 @onready var head: Node3D = $Head
+@onready var ground_cast: ShapeCast3D = $GroundCast
 
 var mouse_locked: bool = true:
 	set(value):
@@ -22,6 +24,12 @@ func _ready() -> void:
 
 func _update_mouselock() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED if mouse_locked else Input.MOUSE_MODE_VISIBLE
+
+
+func is_grounded() -> bool:
+	if ground_cast and ground_cast.is_colliding():
+		return true
+	return false
 
 
 func _input(event: InputEvent) -> void:
@@ -45,8 +53,13 @@ func _physics_process(delta: float) -> void:
 	pitch = 0.0
 	yaw = 0.0
 	
+	if is_grounded() and Input.is_action_just_pressed("move_jump"):
+		apply_impulse(Vector3(0, jump_force * mass, 0))
+	
 	wish_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	move_speed = sprint_speed if Input.is_action_pressed("move_sprint") else walk_speed
 	
-	var move_vector = Vector3(wish_dir.x, 0.0, wish_dir.y) * move_speed * transform.basis.inverse()
-	apply_force(move_vector)
+	var direction = (transform.basis * Vector3(wish_dir.x, 0.0, wish_dir.y)).normalized()
+	var target_velocity = direction * move_speed
+	var velocity_diff = target_velocity - Vector3(linear_velocity.x, 0.0, linear_velocity.z)
+	apply_central_force(velocity_diff * mass * 10.0)
