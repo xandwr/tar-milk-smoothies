@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dkwlj6kh4n0xt"]
+
+[ext_resource type="Texture2D" uid="uid://7o0qvfhmykyr" path="res://assets/textures/world/ConcretePanels3b.png" id="1_f0jk0"]
+
+[resource]
+albedo_texture = ExtResource("1_f0jk0")
+metallic_specular = 0.0
+texture_filter = 2

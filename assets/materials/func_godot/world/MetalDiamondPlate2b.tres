@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://0ol8batd7lwj"]
+
+[ext_resource type="Texture2D" uid="uid://o5e2216qunek" path="res://assets/textures/world/MetalDiamondPlate2b.png" id="1_3dwit"]
+
+[resource]
+albedo_texture = ExtResource("1_3dwit")
+metallic_specular = 0.0
+texture_filter = 2
