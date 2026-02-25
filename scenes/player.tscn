@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c5ile72mnpkgw"]
 
 [ext_resource type="Script" uid="uid://cxfva7jufudpu" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://6gcwaxrj1r1h" path="res://scripts/player_object_grab.gd" id="3_dqkch"]
 [ext_resource type="Script" uid="uid://nqd3ghncwj7y" path="res://scripts/mass_gun.gd" id="3_qhqgy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n70b5"]
@@ -20,6 +21,12 @@ shape = SubResource("CapsuleShape3D_n70b5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1285004678]
+
+[node name="PlayerObjectGrab" type="Node3D" parent="Head" unique_id=1421914500]
+script = ExtResource("3_dqkch")
+
+[node name="GrabCast" type="RayCast3D" parent="Head/PlayerObjectGrab" unique_id=2039104384]
+target_position = Vector3(0, 0, -2)
 
 [node name="MassGun" type="Node3D" parent="." unique_id=1012438904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
