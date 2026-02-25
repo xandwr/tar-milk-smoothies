@@ -7,7 +7,7 @@
 
 First-person horror game. You wake up in a facility run by Clearwater Inc. Nothing is explained. You descend through physics gauntlets — environmental puzzles, hazards, things that want to kill you. You survive, you get paid. You spend the money on meaningless shit for your room. You sleep. You wake up. You do it again.
 
-Free on itch.io. Godot 4.6.
+Godot 4.6.1. Mono.
 
 ## The Vibe
 
