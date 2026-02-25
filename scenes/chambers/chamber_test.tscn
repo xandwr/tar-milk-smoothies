@@ -2,30 +2,30 @@
 
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_afxsu"]
 [ext_resource type="Resource" uid="uid://beicf8p28ngm0" path="res://assets/func_godot/map_settings.tres" id="2_afxsu"]
-[ext_resource type="Texture2D" uid="uid://blc8x28cl1hm3" path="res://assets/textures/world/ConcreteGeneric1a.png" id="3_n70b5"]
+[ext_resource type="Material" uid="uid://tnkkqt46ajc2" path="res://assets/materials/func_godot/world/ConcreteGeneric1a.tres" id="3_n70b5"]
+[ext_resource type="Script" uid="uid://cxfva7jufudpu" path="res://scripts/player.gd" id="4_f3qh6"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3qh6"]
-albedo_texture = ExtResource("3_n70b5")
-metallic_specular = 0.0
-texture_filter = 2
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_034wr"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_f3qh6"]
 _surfaces = [{
-"aabb": AABB(-2, -1, -2, 4, 1, 4),
-"attribute_data": PackedByteArray("AACAvgAAAAAAAIA+AAAAAAAAgD4AAAA+AACAvgAAAD4AAIA+AAAAPgAAgL4AAAA+AACAvgAAAAAAAIA+AAAAAAAAgL4AAIA+AACAvgAAgL4AAIA+AACAvgAAgD4AAIA+AACAPgAAgD4AAIC+AACAPgAAgL4AAIC+AACAPgAAgL4AAIC+AAAAAAAAgD4AAAAAAACAPgAAAD4AAIC+AAAAPgAAgD4AAAA+AACAvgAAAD4AAIC+AAAAAAAAgD4AAAAA"),
+"aabb": AABB(-4, -1, -4, 8, 1, 8),
+"attribute_data": PackedByteArray("AAAAvwAAAAAAAAA/AAAAAAAAAD8AAAA+AAAAvwAAAD4AAAA/AAAAPgAAAL8AAAA+AAAAvwAAAAAAAAA/AAAAAAAAAL8AAAA/AAAAvwAAAL8AAAA/AAAAvwAAAD8AAAA/AAAAPwAAAD8AAAC/AAAAPwAAAL8AAAC/AAAAPwAAAL8AAAC/AAAAAAAAAD8AAAAAAAAAPwAAAD4AAAC/AAAAPgAAAD8AAAA+AAAAvwAAAD4AAAC/AAAAAAAAAD8AAAAA"),
 "format": 34359742487,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
-"material": SubResource("StandardMaterial3D_f3qh6"),
+"material": ExtResource("3_n70b5"),
 "name": "world/ConcreteGeneric1a",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
-"vertex_data": PackedByteArray("AAAAQAAAAAAAAADAAAAAwAAAAAAAAADAAAAAwAAAgL8AAADAAAAAQAAAgL8AAADAAAAAwAAAgL8AAABAAAAAwAAAgL8AAADAAAAAwAAAAAAAAADAAAAAwAAAAAAAAABAAAAAwAAAgL8AAABAAAAAQAAAgL8AAABAAAAAQAAAgL8AAADAAAAAwAAAgL8AAADAAAAAwAAAAAAAAABAAAAAwAAAAAAAAADAAAAAQAAAAAAAAADAAAAAQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAQAAAAAAAAADAAAAAQAAAgL8AAADAAAAAQAAAgL8AAABAAAAAQAAAgL8AAABAAAAAwAAAgL8AAABAAAAAwAAAAAAAAABAAAAAQAAAAAAAAABA/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+"vertex_data": PackedByteArray("AACAQAAAAAAAAIDAAACAwAAAAAAAAIDAAACAwAAAgL8AAIDAAACAQAAAgL8AAIDAAACAwAAAgL8AAIBAAACAwAAAgL8AAIDAAACAwAAAAAAAAIDAAACAwAAAAAAAAIBAAACAwAAAgL8AAIBAAACAQAAAgL8AAIBAAACAQAAAgL8AAIDAAACAwAAAgL8AAIDAAACAwAAAAAAAAIBAAACAwAAAAAAAAIDAAACAQAAAAAAAAIDAAACAQAAAAAAAAIBAAACAQAAAAAAAAIBAAACAQAAAAAAAAIDAAACAQAAAgL8AAIDAAACAQAAAgL8AAIBAAACAQAAAgL8AAIBAAACAwAAAgL8AAIBAAACAwAAAAAAAAIBAAACAQAAAAAAAAIBA/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
 }]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gknov"]
-points = PackedVector3Array(2, 0, 2, 2, -1, 2, -2, 0, 2, -2, -1, 2, 2, 0, -2, 2, -1, -2, -2, 0, -2, -2, -1, -2)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_034wr"]
+points = PackedVector3Array(4, 0, 4, 4, -1, 4, -4, 0, 4, -4, -1, 4, 4, 0, -4, 4, -1, -4, -4, 0, -4, -4, -1, -4)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n70b5"]
+radius = 0.2
+height = 1.8
 
 [node name="ChamberTest" type="Node3D" unique_id=1474314802]
 
@@ -35,11 +35,23 @@ local_map_file = "uid://cf2bbgd8wr644"
 map_settings = ExtResource("2_afxsu")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
-[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=151116668]
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="FuncGodotMap" unique_id=484123216]
 collision_mask = 0
 
-[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=115890633]
-mesh = SubResource("ArrayMesh_034wr")
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=1394381343]
+mesh = SubResource("ArrayMesh_f3qh6")
 
-[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=794660552]
-shape = SubResource("ConvexPolygonShape3D_gknov")
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=1480095886]
+shape = SubResource("ConvexPolygonShape3D_034wr")
+
+[node name="Player" type="RigidBody3D" parent="." unique_id=906091339]
+script = ExtResource("4_f3qh6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=86737461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_n70b5")
+
+[node name="Head" type="Node3D" parent="Player" unique_id=611307704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=1700307984]
