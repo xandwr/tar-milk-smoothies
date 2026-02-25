@@ -9,10 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://7o0qvfhmykyr" path="res://assets/textures/world/ConcretePanels3b.png" id="6_5813e"]
 [ext_resource type="Material" uid="uid://dysggjhmvkdtb" path="res://assets/materials/func_godot/world/WoodGeneric2a.tres" id="8_ialu7"]
 [ext_resource type="PackedScene" uid="uid://c5ile72mnpkgw" path="res://scenes/player.tscn" id="9_ialu7"]
-[ext_resource type="PackedScene" uid="uid://4qe1s5nokboo" path="res://scenes/prefabs/obj_crate_1.tscn" id="10_dg6xu"]
-[ext_resource type="PackedScene" uid="uid://caqqlmtbah3y3" path="res://scenes/prefabs/obj_crate_2.tscn" id="11_j1iy5"]
-[ext_resource type="PackedScene" uid="uid://b0isojkctib56" path="res://scenes/prefabs/obj_crate_3.tscn" id="12_5813e"]
-[ext_resource type="PackedScene" uid="uid://cx0vnlx32yqds" path="res://scenes/prefabs/obj_barrel_1.tscn" id="13_ialu7"]
+[ext_resource type="PackedScene" uid="uid://dy61v44ocy1r6" path="res://scenes/prefabs/portal.tscn" id="10_dg6xu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhk5y"]
 albedo_texture = ExtResource("6_5813e")
@@ -286,20 +283,11 @@ spot_range = 28.0
 spot_attenuation = 2.0
 spot_angle = 70.0
 
-[node name="ObjCrate1" parent="." unique_id=2128292793 instance=ExtResource("10_dg6xu")]
-transform = Transform3D(0.668936, 0, -0.74332, 0, 1, 0, 0.74332, 0, 0.668936, 2.3840873, 0.60228443, -5.862854)
+[node name="Portal1" parent="." unique_id=1196002053 node_paths=PackedStringArray("other_portal") instance=ExtResource("10_dg6xu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.99, 1.9, -5.4)
+other_portal = NodePath("../Portal2")
 
-[node name="ObjCrate2" parent="." unique_id=2111418153 instance=ExtResource("11_j1iy5")]
-transform = Transform3D(0.91762984, 0, -0.3974362, 0, 1, 0, 0.3974362, 0, 0.91762984, 3.8189688, 0.60228425, -4.0811696)
-
-[node name="ObjCrate3" parent="." unique_id=429463736 instance=ExtResource("12_5813e")]
-transform = Transform3D(0.9034027, 0, -0.42879322, 0, 1, 0, 0.42879322, 0, 0.9034027, 4.5454407, 0.60228425, -1.9021)
-
-[node name="ObjBarrel1" parent="." unique_id=624589941 instance=ExtResource("13_ialu7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7970977, 0.6022842, -3.015963)
-
-[node name="ObjBarrel2" parent="." unique_id=1236546546 instance=ExtResource("13_ialu7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.251973, 0.6022842, -6.6051197)
-
-[node name="ObjBarrel3" parent="." unique_id=1160533218 instance=ExtResource("13_ialu7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.80972, 0.6022842, -10.566219)
+[node name="Portal2" parent="." unique_id=435407527 node_paths=PackedStringArray("other_portal") instance=ExtResource("10_dg6xu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.99, 1.9, 0.5999999)
+other_portal = NodePath("../Portal1")
+portal_type = 1

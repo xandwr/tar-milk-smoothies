@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dy61v44ocy1r6"]
+
+[ext_resource type="Script" uid="uid://cll1g5kunm42d" path="res://scripts/portal.gd" id="1_ggukc"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ggukc"]
+size = Vector2(1.5, 3)
+
+[node name="Portal" type="Node3D" unique_id=435407527]
+script = ExtResource("1_ggukc")
+
+[node name="PortalMesh" type="MeshInstance3D" parent="." unique_id=1115750723]
+unique_name_in_owner = true
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+mesh = SubResource("QuadMesh_ggukc")
