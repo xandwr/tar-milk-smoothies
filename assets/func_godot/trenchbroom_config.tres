@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TrenchBroomGameConfig" format=3 uid="uid://cjktax1oq8uou"]
+
+[ext_resource type="Resource" uid="uid://b4xhdj0e16lop" path="res://addons/func_godot/game_config/trenchbroom/tb_face_tag_clip.tres" id="1_fkspb"]
+[ext_resource type="Resource" uid="uid://ca7377sfgj074" path="res://addons/func_godot/game_config/trenchbroom/tb_face_tag_skip.tres" id="2_37qqj"]
+[ext_resource type="Resource" uid="uid://bkjxc54mmdhbo" path="res://addons/func_godot/game_config/trenchbroom/tb_face_tag_origin.tres" id="3_wcoro"]
+[ext_resource type="Resource" uid="uid://pa1g7i6ew0js" path="res://assets/func_godot/fgd.tres" id="4_gb5ja"]
+[ext_resource type="Texture2D" uid="uid://decwujsyhj0qy" path="res://addons/func_godot/icon32.png" id="5_uv4a4"]
+[ext_resource type="Script" uid="uid://cx44c4vnq8bt5" path="res://addons/func_godot/src/trenchbroom/trenchbroom_game_config.gd" id="6_v4vpw"]
+
+[resource]
+script = ExtResource("6_v4vpw")
+game_name = "TarMilk Smoothies"
+textures_root_folder = "assets/textures"
+palette_path = "assets/textures/palette.lmp"
+fgd_file = ExtResource("4_gb5ja")
+metadata/_custom_type_script = "uid://cx44c4vnq8bt5"

@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cf2bbgd8wr644"
+path="res://.godot/imported/chamber_test.map-7f260f8c780ee0403087b6a9625ec747.tres"
+
+[deps]
+
+source_file="res://assets/maps/chamber_test.map"
+dest_files=["res://.godot/imported/chamber_test.map-7f260f8c780ee0403087b6a9625ec747.tres"]
+
+[params]
+
