@@ -9,7 +9,8 @@ size = Vector3(1.0741577, 1.0788574, 1)
 mass = 10.0
 
 [node name="wooden_crate_22" parent="." unique_id=1875398621 instance=ExtResource("1_m1w22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51322836, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=414246151]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018615723, 0.5393311, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018615723, 0.026102722, 0)
 shape = SubResource("BoxShape3D_jo7lr")

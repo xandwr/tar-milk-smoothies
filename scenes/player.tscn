@@ -28,8 +28,7 @@ script = ExtResource("3_dqkch")
 [node name="GrabCast" type="RayCast3D" parent="Head/PlayerObjectGrab" unique_id=2039104384]
 target_position = Vector3(0, 0, -2)
 
-[node name="MassGun" type="Node3D" parent="." unique_id=1012438904]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+[node name="MassGun" type="Node3D" parent="Head" unique_id=1012438904]
 script = ExtResource("3_qhqgy")
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=1934377785]

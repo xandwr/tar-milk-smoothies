@@ -8,16 +8,33 @@ class_name MassGun extends Node3D
 @export var tank_capacity: float = 100.0
 ## Minimum mass an object can be drained to.
 @export var min_object_mass: float = 0.5
+@export var throw_force: float = 15.0
 
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
+@onready var grab: PlayerObjectGrab = get_parent().get_node("PlayerObjectGrab")
 
 var tank: float = 0.0
 var target: RigidBody3D = null
 var target_original_mass: float = 0.0
 var target_original_scale: Vector3 = Vector3.ONE
+var cooldown: float = 0.0
 
 
 func _physics_process(delta: float) -> void:
+	if cooldown > 0.0:
+		cooldown -= delta
+		return
+
+	if grab and grab.held_object:
+		target = null
+		if Input.is_action_just_pressed("mass_drain"):
+			_throw()
+			cooldown = 0.2
+		elif Input.is_action_just_pressed("mass_fill"):
+			grab._drop()
+			cooldown = 0.2
+		return
+
 	_update_target()
 
 	if target:
@@ -74,6 +91,13 @@ func _fill(delta: float) -> void:
 	target.mass += amount
 	tank -= amount
 	_update_object_scale(target)
+
+
+func _throw() -> void:
+	var obj = grab.held_object
+	grab._drop()
+	var dir = -camera.global_basis.z
+	obj.linear_velocity = dir * throw_force
 
 
 func _update_object_scale(body: RigidBody3D) -> void:

@@ -1,8 +1,8 @@
 class_name PlayerObjectGrab extends Node3D
 
-@export var max_grab_mass: float = 12.5
-@export var hold_distance: float = 2.0
-@export var grab_strength: float = 4.0
+@export var max_grab_mass: float = 12.0
+@export var hold_distance: float = 1.8
+@export var grab_strength: float = 8.0
 
 @onready var grab_cast: RayCast3D = $GrabCast
 
@@ -27,9 +27,10 @@ func _physics_process(_delta: float) -> void:
 			return
 
 		var mass_ratio = held_object.mass / max_grab_mass
-		var strength = lerpf(grab_strength, grab_strength * 0.1, mass_ratio)
+		var strength = lerpf(grab_strength, grab_strength * 0.25, mass_ratio)
 		var hold_pos = global_position + -global_basis.z * hold_distance
-		var offset = hold_pos - held_object.global_position
+		var com_world = held_object.global_position + held_object.global_basis * held_object.center_of_mass
+		var offset = hold_pos - com_world
 		held_object.linear_velocity = offset * strength
 
 
