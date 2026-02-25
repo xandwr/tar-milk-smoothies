@@ -28,3 +28,25 @@ script = ExtResource("2_g2els")
 [node name="MassGun" type="Node3D" parent="." unique_id=1012438904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 script = ExtResource("3_qhqgy")
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=1934377785]
+
+[node name="Crosshair" type="Control" parent="GUI" unique_id=11059003]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="GUI/Crosshair" unique_id=916662397]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1

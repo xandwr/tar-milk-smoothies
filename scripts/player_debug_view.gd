@@ -3,7 +3,7 @@ class_name PlayerDebugView extends Node
 
 func _process(_delta: float) -> void:
 	for node in _get_all_rigid_bodies(get_tree().root):
-		DebugDraw3D.draw_text(node.global_position + (Vector3.UP * 1.5), "Mass: %s" % str(node.mass))
+		DebugDraw3D.draw_text(node.global_position + (Vector3.UP * 1.5), "Mass: %.2f" % node.mass)
 
 
 func _get_all_rigid_bodies(root: Node) -> Array[RigidBody3D]:
