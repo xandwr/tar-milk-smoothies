@@ -62,4 +62,4 @@ func _physics_process(delta: float) -> void:
 	var direction = (transform.basis * Vector3(wish_dir.x, 0.0, wish_dir.y)).normalized()
 	var target_velocity = direction * move_speed
 	var velocity_diff = target_velocity - Vector3(linear_velocity.x, 0.0, linear_velocity.z)
-	apply_central_force(velocity_diff * mass * 10.0)
+	apply_central_force(velocity_diff * mass * (mass * 0.5))

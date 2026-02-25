@@ -75,6 +75,8 @@ interact={
 
 [physics]
 
+common/physics_ticks_per_second=72
+common/max_physics_steps_per_frame=12
 common/physics_jitter_fix=0.0
 3d/physics_engine="Jolt Physics"
 3d/default_gravity=15.4
