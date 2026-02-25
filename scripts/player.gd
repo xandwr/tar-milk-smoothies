@@ -19,6 +19,8 @@ var external_velocity: Vector3 = Vector3.ZERO
 
 
 func _ready() -> void:
+	PortalManager.player = self
+	PortalManager.player_camera = $Head/Camera3D
 	_update_mouselock()
 
 
