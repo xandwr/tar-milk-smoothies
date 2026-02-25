@@ -33,7 +33,7 @@ func _input(event: InputEvent) -> void:
 		yaw -= event.relative.x
 
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if head and mouse_locked:
 		head.rotation.x = clampf(
 			head.rotation.x + (pitch * delta * mouse_sensitivity),
@@ -44,11 +44,9 @@ func _process(delta: float) -> void:
 	
 	pitch = 0.0
 	yaw = 0.0
-
-
-func _physics_process(_delta: float) -> void:
+	
 	wish_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	move_speed = sprint_speed if Input.is_action_pressed("move_sprint") else walk_speed
 	
-	var move_vector = Vector3(wish_dir.x, 0.0, wish_dir.y) * move_speed
+	var move_vector = Vector3(wish_dir.x, 0.0, wish_dir.y) * move_speed * transform.basis.inverse()
 	apply_force(move_vector)
