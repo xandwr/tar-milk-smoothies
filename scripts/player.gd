@@ -1,8 +1,8 @@
 extends RigidBody3D
 
 @export var mouse_sensitivity: float = 0.33
-@export var walk_speed: float = 4.0
-@export var sprint_speed: float = 6.5
+@export var walk_speed: float = 3.5
+@export var sprint_speed: float = 5.5
 @export var jump_force: float = 4.0
 
 @onready var head: Node3D = $Head
@@ -62,4 +62,4 @@ func _physics_process(delta: float) -> void:
 	var direction = (transform.basis * Vector3(wish_dir.x, 0.0, wish_dir.y)).normalized()
 	var target_velocity = direction * move_speed
 	var velocity_diff = target_velocity - Vector3(linear_velocity.x, 0.0, linear_velocity.z)
-	apply_central_force(velocity_diff * mass * (mass * 0.5))
+	apply_central_force(velocity_diff * mass * 32.0)

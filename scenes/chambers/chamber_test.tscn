@@ -53,7 +53,7 @@ shape = SubResource("ConvexPolygonShape3D_034wr")
 [node name="Player" type="RigidBody3D" parent="." unique_id=906091339]
 axis_lock_angular_x = true
 axis_lock_angular_z = true
-mass = 65.0
+mass = 75.0
 physics_material_override = SubResource("PhysicsMaterial_f3qh6")
 script = ExtResource("4_f3qh6")
 
