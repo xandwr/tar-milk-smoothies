@@ -59,4 +59,14 @@ func _process(_delta: float) -> void:
 	var linked = get_linked()
 	if not linked or not PortalManager.player_camera: return
 	
-	portal_camera.global_transform = global_transform
+	# This camera's output is shown on the linked portal's screen.
+	# The linked portal should show what's on the other side of THIS portal.
+	# Get player offset from linked portal, flip 180 so camera faces outward
+	# (behind the portal surface), then apply at this portal.
+	var player_cam = PortalManager.player_camera
+	var relative_to_linked = linked.global_transform.affine_inverse() * player_cam.global_transform
+	# Negate Z position (put camera behind portal) and rotate 180 around Y (face outward)
+	relative_to_linked.origin.z = -relative_to_linked.origin.z
+	relative_to_linked.origin.x = -relative_to_linked.origin.x
+	relative_to_linked = relative_to_linked.rotated_local(Vector3.UP, PI)
+	portal_camera.global_transform = global_transform * relative_to_linked

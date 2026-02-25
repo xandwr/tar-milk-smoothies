@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bsai4k8ptyabq"]
+
+[ext_resource type="Texture2D" uid="uid://dhmu0toe1itnr" path="res://assets/textures/special/clip.png" id="1_eytj8"]
+
+[resource]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = ExtResource("1_eytj8")
+metallic_specular = 0.0
+texture_filter = 2
