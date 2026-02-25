@@ -1,5 +1,7 @@
 class_name MassGun extends Node3D
 
+@export var enabled: bool = false
+
 ## How far the gun can reach.
 @export var reach: float = 20.0
 ## Mass drained/filled per second while holding the trigger.
@@ -21,6 +23,8 @@ var cooldown: float = 0.0
 
 
 func _physics_process(delta: float) -> void:
+	if not enabled: return
+	
 	if cooldown > 0.0:
 		cooldown -= delta
 		return
