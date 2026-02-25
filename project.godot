@@ -15,6 +15,10 @@ run/main_scene="uid://utfd3884k85y"
 run/print_header=false
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[debug_draw_3d]
+
+settings/addon_root_folder="res://addons/debug_draw_3d"
+
 [display]
 
 window/size/viewport_width=1920

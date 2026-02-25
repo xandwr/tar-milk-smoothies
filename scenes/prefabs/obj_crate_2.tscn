@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://caqqlmtbah3y3"]
+
+[ext_resource type="PackedScene" uid="uid://b6di5qtlmj6di" path="res://assets/models/crates/wooden_crate_2.glb" id="1_m1w22"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jo7lr"]
+size = Vector3(1.0741577, 1.0788574, 1)
+
+[node name="ObjCrate2" type="RigidBody3D" unique_id=2111418153]
+mass = 10.0
+
+[node name="wooden_crate_22" parent="." unique_id=1875398621 instance=ExtResource("1_m1w22")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=414246151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018615723, 0.5393311, 0)
+shape = SubResource("BoxShape3D_jo7lr")

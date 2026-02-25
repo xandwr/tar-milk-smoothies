@@ -5,10 +5,14 @@
 [ext_resource type="Material" uid="uid://0ol8batd7lwj" path="res://assets/materials/func_godot/world/MetalDiamondPlate2b.tres" id="3_jtxs5"]
 [ext_resource type="Material" uid="uid://tnkkqt46ajc2" path="res://assets/materials/func_godot/world/ConcreteGeneric1a.tres" id="3_n70b5"]
 [ext_resource type="Material" uid="uid://dn1sxwtmnjpgh" path="res://assets/materials/func_godot/world/ConcreteSidewalk3a.tres" id="4_dg6xu"]
-[ext_resource type="Script" uid="uid://cxfva7jufudpu" path="res://scripts/player.gd" id="4_f3qh6"]
 [ext_resource type="Material" uid="uid://bg5mqanm5jo1" path="res://assets/materials/func_godot/world/PlasterBoard1e.tres" id="5_j1iy5"]
 [ext_resource type="Texture2D" uid="uid://7o0qvfhmykyr" path="res://assets/textures/world/ConcretePanels3b.png" id="6_5813e"]
 [ext_resource type="Material" uid="uid://dysggjhmvkdtb" path="res://assets/materials/func_godot/world/WoodGeneric2a.tres" id="8_ialu7"]
+[ext_resource type="PackedScene" uid="uid://c5ile72mnpkgw" path="res://scenes/player.tscn" id="9_ialu7"]
+[ext_resource type="PackedScene" uid="uid://4qe1s5nokboo" path="res://scenes/prefabs/obj_crate_1.tscn" id="10_dg6xu"]
+[ext_resource type="PackedScene" uid="uid://caqqlmtbah3y3" path="res://scenes/prefabs/obj_crate_2.tscn" id="11_j1iy5"]
+[ext_resource type="PackedScene" uid="uid://b0isojkctib56" path="res://scenes/prefabs/obj_crate_3.tscn" id="12_5813e"]
+[ext_resource type="PackedScene" uid="uid://cx0vnlx32yqds" path="res://scenes/prefabs/obj_barrel_1.tscn" id="13_ialu7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhk5y"]
 albedo_texture = ExtResource("6_5813e")
@@ -129,10 +133,6 @@ points = PackedVector3Array(8, 8, -15, 8, 7, -15, -8, 8, -15, -8, 7, -15, 8, 8, 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_umdq7"]
 points = PackedVector3Array(8, 7, -11, 8, 8, -11, -4, 0, -11, -4, 1.0000004, -11, 8, 7, -11.999999, 8, 8, -11.999999, -4, 0, -11.999999, -4, 1.0000004, -11.999999)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n70b5"]
-radius = 0.2
-height = 1.8
-
 [node name="ChamberTest" type="Node3D" unique_id=1474314802]
 
 [node name="FuncGodotMap" type="Node3D" parent="." unique_id=1654786904]
@@ -186,19 +186,7 @@ shape = SubResource("ConvexPolygonShape3D_i7h4u")
 [node name="entity_0_brush_12_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn" unique_id=1700374829]
 shape = SubResource("ConvexPolygonShape3D_umdq7")
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=2141634971]
-axis_lock_angular_x = true
-axis_lock_angular_z = true
-script = ExtResource("4_f3qh6")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=86737461]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-shape = SubResource("CapsuleShape3D_n70b5")
-
-[node name="Head" type="Node3D" parent="Player" unique_id=611307704]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-
-[node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=1700307984]
+[node name="Player" parent="." unique_id=411753124 instance=ExtResource("9_ialu7")]
 
 [node name="Lights" type="Node3D" parent="." unique_id=1566665242]
 
@@ -297,3 +285,21 @@ shadow_enabled = true
 spot_range = 28.0
 spot_attenuation = 2.0
 spot_angle = 70.0
+
+[node name="ObjCrate1" parent="." unique_id=2128292793 instance=ExtResource("10_dg6xu")]
+transform = Transform3D(0.668936, 0, -0.74332, 0, 1, 0, 0.74332, 0, 0.668936, 2.3840873, 2.5744404e-07, -5.862854)
+
+[node name="ObjCrate2" parent="." unique_id=2111418153 instance=ExtResource("11_j1iy5")]
+transform = Transform3D(0.91762984, 0, -0.3974362, 0, 1, 0, 0.3974362, 0, 0.91762984, 3.8189688, 6.4373026e-08, -4.0811696)
+
+[node name="ObjCrate3" parent="." unique_id=429463736 instance=ExtResource("12_5813e")]
+transform = Transform3D(0.9034027, 0, -0.42879322, 0, 1, 0, 0.42879322, 0, 0.9034027, 4.5454407, 4.2915346e-08, -1.9021)
+
+[node name="ObjBarrel1" parent="." unique_id=624589941 instance=ExtResource("13_ialu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7970977, 0, -3.015963)
+
+[node name="ObjBarrel2" parent="." unique_id=1236546546 instance=ExtResource("13_ialu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.251973, 0, -6.6051197)
+
+[node name="ObjBarrel3" parent="." unique_id=1160533218 instance=ExtResource("13_ialu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.80972, 0, -10.566219)
